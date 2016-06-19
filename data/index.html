@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <title>REST API (Mongo&MySql)</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body ng-controller="mainCtrl">
     <form name="form" ng-submit="getData(name,surname,description,category,songs)">
-      <input type="text" placeholder="name" ng-model="name">
-      <input type="text" placeholder="tel" ng-model="surname">
-      <textarea placeholder="text" ng-model="description"></textarea>
+      <input type="text" placeholder="name" ng-model="name" required>
+      <input type="text" placeholder="surname" ng-model="surname" required>
+      <textarea placeholder="description" ng-model="description"></textarea>
       <input type="text" placeholder="category" ng-model="category">
       <input type="text" placeholder="songs" ng-model="songs">
-      <button>submit</button>
+      <button>submit Mongo</button>
     </form>
   </body>
 </html>
