@@ -1,0 +1,23 @@
+{
+  "name": "restapi",
+  "version": "0.0.1",
+  "description": "REST API(MongoDB, MySql)",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "5.5.0"
+  },
+  "keywords": [
+    "rest"
+  ],
+  "author": "Eduard Simonyan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.4.28",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.5"
+  }
+}
