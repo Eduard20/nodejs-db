@@ -9,13 +9,51 @@
     <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body ng-controller="mainCtrl">
-    <form name="form" ng-submit="getData(name,surname,description,category,songs)">
+  <div class="forms" ng-show="showForms">
+    <form name="form" ng-submit="getDataMongo(name,surname,description,category,songs)">
       <input type="text" placeholder="name" ng-model="name" required>
       <input type="text" placeholder="surname" ng-model="surname" required>
       <textarea placeholder="description" ng-model="description"></textarea>
       <input type="text" placeholder="category" ng-model="category">
       <input type="text" placeholder="songs" ng-model="songs">
-      <button>submit Mongo</button>
+      <button class="btn">submit Mongo</button>
     </form>
+    <form name="form" ng-submit="getDataMysql(name1,surname1,description1,category1,songs1)">
+      <input type="text" placeholder="name" ng-model="name1" required>
+      <input type="text" placeholder="surname" ng-model="surname1" required>
+      <textarea placeholder="description" ng-model="description1"></textarea>
+      <input type="text" placeholder="category" ng-model="category1">
+      <input type="text" placeholder="songs" ng-model="songs1">
+      <button class="btn">submit MySql</button>
+    </form>
+  </div>
+  <div class="text" ng-if="!showForms">
+    <p>Your data was successfully stored in {{database}}</p>
+    <button class="btn" ng-click="goBack()">Go Back</button>
+  </div>
+  <div class="data">
+    <h4>Here You can see your MySql Data</h4>
+    <button class="btn" ng-click="getDataInfo()">get Data from MySQL</button>
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Songs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in mySqlData">
+          <td>{{data.name}}</td>
+          <td>{{data.surname}}</td>
+          <td>{{data.description}}</td>
+          <td>{{data.category}}</td>
+          <td>{{data.songs}}</td>
+        </tr>
+        </tbody>
+      </table>
+  </div>
   </body>
 </html>
